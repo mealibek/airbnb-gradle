@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 public class HelloController implements HelloApi {
+
     @Override
     public HelloResponse hello(String name) {
         return HelloResponse.builder()
