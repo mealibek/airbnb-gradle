@@ -3,6 +3,7 @@ package com.airbnb.airbnb.services.authentication;
 import com.airbnb.airbnb.config.security.jsonwebtoken.JWTAuthenticationService;
 import com.airbnb.airbnb.dto.authentication.AuthenticationRequest;
 import com.airbnb.airbnb.dto.authentication.AuthenticationResponse;
+import com.airbnb.airbnb.enums.Role;
 import com.airbnb.airbnb.models.User;
 import com.airbnb.airbnb.repositories.user.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -22,6 +23,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         User user = User.builder()
                 .email(authenticationRequest.getEmail())
                 .password(authenticationRequest.getPassword())
+                .role(Role.USER)
                 .build();
         userRepository.save(user);
         return AuthenticationResponse

@@ -10,6 +10,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface HelloApi {
 
     @GetMapping("")
-    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
     HelloResponse hello(@RequestParam(defaultValue = "World", required = false) String name);
 }
