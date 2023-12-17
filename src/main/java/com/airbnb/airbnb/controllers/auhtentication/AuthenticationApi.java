@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @RequestMapping("/api/auth")
 public interface AuthenticationApi {
 
-    @PostMapping("sing-up")
+    @PostMapping("/sing-up")
     @ResponseStatus(HttpStatus.CREATED)
     AuthenticationResponse signUp(AuthenticationRequest authenticationRequest);
 
-    @PostMapping("sign-in")
+    @PostMapping("/sign-in")
     @ResponseStatus(HttpStatus.OK)
     AuthenticationResponse signUp(String email, String password);
 }
